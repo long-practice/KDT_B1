@@ -168,6 +168,7 @@ def main():
     log_path = os.path.join(logdir, 'train.log')
     infolog.init(log_path, logdir)
 
+    tf.device('/gpu:0')
 
     global_step = tf.Variable(0, name='global_step', trainable=False)
 
