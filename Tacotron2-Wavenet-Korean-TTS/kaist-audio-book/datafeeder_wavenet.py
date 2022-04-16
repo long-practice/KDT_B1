@@ -160,6 +160,7 @@ class DataFeederWavenet(threading.Thread):
         if self.gc_enable:
             return (input_wav,local_condition, self.data_dir_to_id[data_dir])
         else: return (input_wav,local_condition)
+        
 def _prepare_batch(batch):
     input_wavs = [x[0] for x in batch]
     local_conditions = [x[1] for x in batch]
@@ -173,7 +174,7 @@ def _prepare_batch(batch):
 if __name__ == '__main__':
     coord = tf.train.Coordinator()
     # data_dirs=['D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\moon','D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\son']
-    data_dirs=[f'./kaist-audio-book/wav/남{i}' for i in range(1, 8)] + [f'./kaist-audio-book/wav/여{i}' for i in range(1, 7)]
+    data_dirs=[f'./kaist-audio-book/wav/남{i}' for i in range(1, 7)] + [f'./kaist-audio-book/wav/여{i}' for i in range(1, 6)]
     mydatafeed =  DataFeederWavenet(coord,data_dirs,batch_size=5,receptive_field=1200, gc_enable=True, queue_size=8)
     
     

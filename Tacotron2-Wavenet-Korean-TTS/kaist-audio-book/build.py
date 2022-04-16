@@ -27,14 +27,15 @@ def build_from_path(hparams, in_dir, out_dir, num_workers=1, tqdm=lambda x: x):
     futures = []
     index = 1
 
-    path = os.path.join(in_dir, f'{in_dir}.json')
+    j = in_dir.split('_')[0]
+    path = os.path.join(f'{j}.json')
     
     with open(path,encoding='utf-8') as f:
         content = f.read()
         data = json.loads(content)
         for key, text in data.items():
             wav_path = key.strip().split('/')
-            wav_path = os.path.join(in_dir, 'audio', '%s' % wav_path[-1])
+            wav_path = os.path.join(in_dir, '%s' % wav_path[-1])
             # In case of test file
             if not os.path.exists(wav_path):
                 continue

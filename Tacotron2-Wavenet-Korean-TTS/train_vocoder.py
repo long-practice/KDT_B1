@@ -123,7 +123,7 @@ def main():
     
     parser = argparse.ArgumentParser(description='WaveNet example network')
     
-    data_dirs = ['./kaist-audio-book/wav/남{i}' for i in range(1, 8)] + ['./kaist-audio-book/wav/여{i}' for i in range(1, 7)]
+    data_dirs = ['./kaist-audio-book/wav/남{i}' for i in range(1, 7)] + ['./kaist-audio-book/wav/여{i}' for i in range(1, 6)]
     DATA_DIRECTORY =  ','.join(data_dirs)
     #DATA_DIRECTORY =  'D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\moon'
     parser.add_argument('--data_dir', type=str, default=DATA_DIRECTORY, help='The directory containing the VCTK corpus.')

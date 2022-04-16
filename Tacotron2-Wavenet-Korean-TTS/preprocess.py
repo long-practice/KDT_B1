@@ -56,6 +56,6 @@ if __name__ == "__main__":
 
     print("Sampling frequency: {}".format(hparams.sample_rate))
 
-    assert name in [f"남{i}" for i in range(1, 8)] + [f"여{i}" for i in range(1, 7)]
+    assert name in [f"남{i}" for i in range(1, 7)] + [f"여{i}" for i in range(1, 6)]
     mod = importlib.import_module('kaist-audio-book.{}'.format(name))
     preprocess(mod, in_dir, out_dir, num_workers)
