@@ -240,7 +240,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--log_dir', default='logdir-tacotron2')
-    data_dirs = ['./kaist-audio-book/wav/남{i}' for i in range(1, 7)] + ['./kaist-audio-book/wav/여{i}' for i in range(1, 6)]
+    data_dirs = ['./kaist-audio-book/wav/m{i}' for i in range(1, 7)] + ['./kaist-audio-book/wav/w{i}' for i in range(1, 6)]
     parser.add_argument('--data_paths', default=','.join(data_dirs))
     #parser.add_argument('--data_paths', default='D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\small1,D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\small2')
     
