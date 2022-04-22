@@ -20,7 +20,7 @@ from utils import get_git_revision_hash, get_git_diff, str2bool, parallel_run
 
 from utils.audio import save_wav, inv_spectrogram
 from text import sequence_to_text, text_to_sequence
-from kaist-audio-book.datafeeder_tacotron2 import DataFeederTacotron2
+from kaistaudiobook.datafeeder_tacotron2 import DataFeederTacotron2
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
