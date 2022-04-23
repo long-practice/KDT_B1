@@ -17,7 +17,7 @@ import tensorflow as tf
 from tensorflow.python.client import timeline
 from datetime import datetime
 from wavenet import WaveNetModel,mu_law_decode
-from kaist-audio-book import DataFeederWavenet
+from kaistaudiobook import DataFeederWavenet
 from hparams import hparams
 from utils import validate_directories,load,save,infolog,get_tensors_in_checkpoint_file,build_tensors_in_checkpoint_file,plot,audio
 
@@ -116,14 +116,14 @@ def create_network(hp,batch_size,num_speakers,is_training):
 def main():
     def _str_to_bool(s):
         """Convert string to bool (in argparse context)."""
-        if s.lower() not in ['true', 'false']
+        if s.lower() not in ['true', 'false']:
             raise ValueError('Argument needs to be a boolean, got {}'.format(s))
         return {'true': True, 'false': False}[s.lower()]
     
     
     parser = argparse.ArgumentParser(description='WaveNet example network')
     
-    data_dirs = ['./kaist-audio-book/wav/m{i}' for i in range(1, 7)] + ['./kaist-audio-book/wav/w{i}' for i in range(1, 6)]
+    data_dirs = [f'./kaistaudiobook/wav/m{i}' for i in range(1, 7)] + [f'./kaistaudiobook/wav/w{i}' for i in range(1, 6)]
     DATA_DIRECTORY =  ','.join(data_dirs)
     #DATA_DIRECTORY =  'D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\moon'
     parser.add_argument('--data_dir', type=str, default=DATA_DIRECTORY, help='The directory containing the VCTK corpus.')
