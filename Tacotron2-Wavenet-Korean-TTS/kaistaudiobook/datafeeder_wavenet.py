@@ -177,7 +177,7 @@ def _prepare_batch(batch):
 if __name__ == '__main__':
     coord = tf.train.Coordinator()
     # data_dirs=['D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\moon','D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\son']
-    data_dirs=[f'./kaist-audio-book/wav/m{i}' for i in range(1, 7)] + [f'./kaist-audio-book/wav/w{i}' for i in range(1, 6)]
+    data_dirs=[f'./kaistaudiobook/wav/m{i}' for i in range(1, 7)] + [f'./kaistaudiobook/wav/w{i}' for i in range(1, 6)]
     mydatafeed =  DataFeederWavenet(coord,data_dirs,batch_size=5,receptive_field=1200, gc_enable=True, queue_size=8)
     
     
