@@ -30,7 +30,7 @@ def get_path_dict(data_dirs, hparams, config,data_type, n_test=None,rng=np.rando
     # Load metadata:
     path_dict = {}
     for data_dir1 in data_dirs:  # ['kaist-audio-book/wav/m1']
-        for data_dir2 in data_dir1:  #['m1_fairytale', 'm1_selfdevelopment']
+        for data_dir2 in os.listdir(data_dir1):  #['m1_fairytale', 'm1_selfdevelopment']
             data_dir = os.path.join(data_dir1, data_dir2)
             paths = glob("{}/*.npz".format(data_dir)) # ['kaist_audio-book/audio-book/wav/m1/m1_fairytale/*.npz]
 
