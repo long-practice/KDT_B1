@@ -351,7 +351,7 @@ if __name__ == '__main__':
     
     coord = tf.train.Coordinator()
     # data_dirs=['D:\\hccho\\Tacotron-Wavenet-Vocoder-hccho\\data\\moon']
-    data_dirs=[f'./kaist-audio-book/wav/m{i}' for i in range(1, 7)] + [f'./kaist-audio-book/wav/w{i}' for i in range(1, 6)]
+    data_dirs=[f'./kaistaudiobook/wav/m{i}' for i in range(1, 7)] + [f'./kaistaudiobook/wav/w{i}' for i in range(1, 6)]
     mydatafeed =  DataFeederTacotron2(coord, data_dirs, hparams, config, 32,data_type='train', batch_size=config.batch_size)
 
     
