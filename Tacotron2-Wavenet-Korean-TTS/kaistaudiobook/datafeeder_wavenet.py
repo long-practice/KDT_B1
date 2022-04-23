@@ -15,24 +15,25 @@ from collections import defaultdict
 
 def get_path_dict(data_dirs, min_length):
     path_dict = {}
-    for data_dir in data_dirs:
-        
-        if not hparams.skip_path_filter:
-        
-            with open(os.path.join(data_dir,'train.txt'), 'r', encoding='utf-8') as f:
-                lines = f.readlines()
-                new_paths = []
-                for line in lines:
-                    line = line.strip().split("|")
-                    if int(line[3]) > min_length:
-                        new_paths.append(line[6])
+    for data_dir1 in data_dirs:
+        for data_dir2 in os.listdir(data_dir1):
+            data_dir = os.path.join(data_dir1, data_dir2)
+            if not hparams.skip_path_filter:
             
-            path_dict[data_dir] = new_paths
-        else:
-            new_paths = glob("{}/*.npz".format(data_dir))
-            
-            new_paths = [os.path.basename(p) for p in new_paths]
-            path_dict[data_dir] = new_paths
+                with open(os.path.join(data_dir,'train.txt'), 'r', encoding='utf-8') as f:
+                    lines = f.readlines()
+                    new_paths = []
+                    for line in lines:
+                        line = line.strip().split("|")
+                        if int(line[3]) > min_length:
+                            new_paths.append(line[6])
+                
+                path_dict[data_dir] = new_paths
+            else:
+                new_paths = glob("{}/*.npz".format(data_dir))
+                
+                new_paths = [os.path.basename(p) for p in new_paths]
+                path_dict[data_dir] = new_paths
     return path_dict
 
 def assert_ready_for_upsampling(x, c,hop_size):
