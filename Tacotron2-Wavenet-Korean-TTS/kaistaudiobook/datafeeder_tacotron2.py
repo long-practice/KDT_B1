@@ -31,7 +31,7 @@ def get_path_dict(data_dirs, hparams, config,data_type, n_test=None,rng=np.rando
     path_dict = {}
     for data_dir1 in data_dirs:  # ['kaist-audio-book/wav/m1']
         for data_dir2 in os.listdir(data_dir1):  #['m1_fairytale', 'm1_selfdevelopment']
-            if data_dir2.startswith(data_dir1.split('/')[-1]):
+            if data_dir2.startswith(data_dir1.split('/')[-2]):
                 data_dir = os.path.join(data_dir1, data_dir2)
                 paths = glob("{}/*.npz".format(data_dir)) # ['kaist_audio-book/audio-book/wav/m1/m1_fairytale/*.npz]
 
