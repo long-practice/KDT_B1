@@ -17,7 +17,7 @@ def get_path_dict(data_dirs, min_length):
     path_dict = {}
     for data_dir1 in data_dirs:
         for data_dir2 in os.listdir(data_dir1):
-            if data_dir2.startswith(data_dir1.split('/')[-1]):
+            if data_dir2.startswith(data_dir1.split('/')[-2]):
                 data_dir = os.path.join(data_dir1, data_dir2)
                 if not hparams.skip_path_filter:
                 
