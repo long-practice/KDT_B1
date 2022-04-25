@@ -17,7 +17,7 @@ import tensorflow as tf
 from tensorflow.python.client import timeline
 from datetime import datetime
 from wavenet import WaveNetModel,mu_law_decode
-from kaistaudiobook import DataFeederWavenet
+from kaistaudiobook.datafeeder_wavenet import DataFeederWavenet
 from hparams import hparams
 from utils import validate_directories,load,save,infolog,get_tensors_in_checkpoint_file,build_tensors_in_checkpoint_file,plot,audio
 

@@ -56,6 +56,7 @@ class Tacotron2():
             if self.num_speakers > 1:
                 speaker_embed_table = tf.get_variable('speaker_embedding',[self.num_speakers, hp.speaker_embedding_size], dtype=tf.float32,initializer=tf.truncated_normal_initializer(stddev=0.5))
                 # [N, T_in, speaker_embedding_size]
+                s = tf.Session()
                 speaker_embed = tf.nn.embedding_lookup(speaker_embed_table, speaker_id)                       
                 
                 deep_dense = lambda x, dim,name: tf.layers.dense(x, dim, activation=tf.nn.softsign,name=name)   # softsign: x / (abs(x) + 1)

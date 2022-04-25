@@ -1,6 +1,9 @@
 ﻿# coding: utf-8
 # Code based on 
 
+import nltk
+nltk.download('punkt')
+
 import re
 import os
 import ast
