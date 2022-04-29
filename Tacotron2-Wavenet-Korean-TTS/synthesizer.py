@@ -31,7 +31,7 @@ from utils import plot, PARAMS_NAME, load_json, load_hparams, add_prefix, add_po
 
 from text.korean import tokenize
 from text import text_to_sequence, sequence_to_text
-from datasets.datafeeder_tacotron2 import _prepare_inputs
+from kaistaudiobook.datafeeder_tacotron2 import _prepare_inputs
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 tf.logging.set_verbosity(tf.logging.ERROR)
