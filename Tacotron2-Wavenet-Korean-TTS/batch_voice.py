@@ -13,7 +13,7 @@ opt = parser.parse_args()
 #temp_dir = '/home/workspace/tmp_dir/*.wav'
 temp_dir = '/home/workspace/tmp_dir'
 #save_dir = '/home/workspace/target/'
-save_dir = '/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
+save_dir = '/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.session_id
 
 sysnthesizer_cmd = '/home/workspace/model/KDT_B1/Tacotron2-Wavenet-Korean-TTS/synthesizer.py'
 load_path = '--load_path logdir-tacotron2/++++++++++_2022-04-25_05-21-56'
