@@ -16,7 +16,7 @@ temp_dir = '/home/workspace/tmp_dir'
 save_dir = '/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' #+ opt.session_id
 
 sysnthesizer_cmd = '/home/workspace/model/KDT_B1/Tacotron2-Wavenet-Korean-TTS/synthesizer.py'
-load_path = '--load_path logdir-tacotron2/++++++++++_2022-04-25_05-21-56'
+load_path = '--load_path logdir-tacotron2/50000steps'
 num_speaker = '--num_speakers 11'
 sample_path = '--sample_path ' + temp_dir
 fixed_cmd ='python' + ' ' + sysnthesizer_cmd + ' ' +load_path + ' '  + sample_path + ' '+ num_speaker
