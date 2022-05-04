@@ -19,7 +19,7 @@ print(str(too_many_character_tale_list) + ' will not present')
 
 sql = 'select *  from homepage_contents'
 cur.execute(sql)
-f = open('/home/workspace/folktale_full_data', 'w')
+f = open('/home/folktale_full_data', 'w')
 voice_map = {}
 voice_map['n'] = 10
 voice_map['m1'] = 0
