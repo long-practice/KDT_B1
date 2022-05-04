@@ -40,18 +40,18 @@ lines = f.readlines()
 for line in lines:
     print(fixed_cmd +' ' + '--speaker_id' + ' ' + line.split('\t')[1] + ' ' + '--text' + ' "' + line.split('\t')[0]  + '."')
     os.system(fixed_cmd +' ' + '--speaker_id' +' ' + line.split('\t')[1] + ' ' + '--text' + ' "' + line.split('\t')[0]  + '."')
-wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
+    wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
 
 #'/home/workspace/tmp_dir'
 
-for wav_file in wav_file_list.split('\n') :
-    if wav_file :
-        print('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/' + str(line.split('\t')[3].strip()) + '.wav')
-        if not os.path.isdir(save_dir + str(line.split('\t')[2])):
-            os.mkdir(save_dir + str(line.split('\t')[2]))
-        os.system('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/'  + str(line.split('\t')[3].strip()) + '.wav')
-        
-        #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
+    for wav_file in wav_file_list.split('\n') :
+        if wav_file :
+            print('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/' + str(line.split('\t')[3].strip()) + '.wav')
+            if not os.path.isdir(save_dir + str(line.split('\t')[2])):
+                os.mkdir(save_dir + str(line.split('\t')[2]))
+            os.system('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/'  + str(line.split('\t')[3].strip()) + '.wav')
+            
+            #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
 
 # if opt.session_id != "":
     
@@ -67,16 +67,16 @@ for wav_file in wav_file_list.split('\n') :
 #     for line in lines:
 #         print(fixed_cmd +' ' + '--speaker_id' + ' ' + 'user input speaker_id' + ' ' + '--text' + ' "' + line  + '."')
 #         os.system(fixed_cmd +' ' + '--speaker_id' +' ' + 'user input speaker_id' + ' ' + '--text' + ' "' + line  + '."')
-#     wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
+#         wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
     
 #     #'/home/workspace/tmp_dir'
-#     cnt = 1
-#     for wav_file in wav_file_list.split('\n') :
-#         if wav_file :
-#             print('mv ' + wav_file + ' '  + save_dir  + '/' + cnt + '.wav')
-#             os.system('mv ' + wav_file + ' '  + save_dir + '/'  + cnt + '.wav')
-#             cnt+=1
-#             #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
+#         cnt = 1
+#         for wav_file in wav_file_list.split('\n') :
+#             if wav_file :
+#                 print('mv ' + wav_file + ' '  + save_dir  + '/' + cnt + '.wav')
+#                 os.system('mv ' + wav_file + ' '  + save_dir + '/'  + cnt + '.wav')
+#                 cnt+=1
+#                 #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
             
             
             
@@ -93,15 +93,15 @@ for wav_file in wav_file_list.split('\n') :
 #     for line in lines:
 #         print(fixed_cmd +' ' + '--speaker_id' + ' ' + line.split('\t')[1] + ' ' + '--text' + ' "' + line.split('\t')[0]  + '."')
 #         os.system(fixed_cmd +' ' + '--speaker_id' +' ' + line.split('\t')[1] + ' ' + '--text' + ' "' + line.split('\t')[0]  + '."')
-#     wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
+#         wav_file_list = subprocess.check_output(['ls ' + temp_dir + '/*.wav'], shell=True, universal_newlines=True)
     
-#     #'/home/workspace/tmp_dir'
+#         #'/home/workspace/tmp_dir'
 
-#     for wav_file in wav_file_list.split('\n') :
-#         if wav_file :
-#             print('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/' + str(line.split('\t')[3].strip()) + '.wav')
-#             if not os.path.isdir(save_dir + str(line.split('\t')[2])):
-#                 os.mkdir(save_dir + str(line.split('\t')[2]))
-#             os.system('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/'  + str(line.split('\t')[3].strip()) + '.wav')
-            
-#             #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
+#         for wav_file in wav_file_list.split('\n') :
+#             if wav_file :
+#                 print('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/' + str(line.split('\t')[3].strip()) + '.wav')
+#                 if not os.path.isdir(save_dir + str(line.split('\t')[2])):
+#                     os.mkdir(save_dir + str(line.split('\t')[2]))
+#                 os.system('mv ' + wav_file + ' '  + save_dir + str(line.split('\t')[2]) + '/'  + str(line.split('\t')[3].strip()) + '.wav')
+                
+#                 #'/home/workspace/app/KDT_B1_2/b1project/homepage/static/file_audio/' + opt.id
