@@ -21,4 +21,9 @@
 - Vocoder 학습
 
   ` python train_vocoder.py`
+  
+<br> 
 
+# 웹 페이지 구성
+
+https://github.com/long-practice/KDT_B1_2
