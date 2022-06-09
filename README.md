@@ -33,16 +33,25 @@
   ` python preprocess.py --name build --in_dir ./kaist-audio-book/wav/m1/m1_language_study1 out_dir ./kaist-audio-book/wav/m1/m1_language_study1 `
 
 # 모델 학습
-- Tacotron2 학습
-
-  ` python train_tacotron2.py `<br>
+- Tacotron2와 ~Wavenet(학습속도 이슈로 적용하지 못함)~ 대신 Griffin-lim 알고리즘으로 음성 생성
+- 각 모델의 세부적인 구조: https://github.com/long-practice/llong/tree/main/Project<br>
 <br>
 
-- Vocoder 학습
-
-  ` python train_vocoder.py`
-  
+- Tacotron2 학습: ` python train_tacotron2.py `
+- 학습을 하게되면 logdir 디렉토리에 학습된 파라미터가 저장, 추후 load_path에 경로를 지정하여 이어서 학습이 가능<br>
+<br>
+- Vocoder 학습: ` python train_vocoder.py `
 <br> 
+- Wavenet은 Causal Convolution구조 때문에 음성 Sampling 과정이 굉장히 오래걸린다는 단점이 있음
+- 이후 2017년 Waveglow 모델에서 한 번 더 성능 개선의 성과를 이루었지만 마찬가지로 느리다는 단점이 있었음
+- 2019년 GAN을 이용한 모델 mel-GAN을 통한 학습속도에 혁신적인 개선이 있었음(성능은 조금 떨어지지만)
+- 최근에는 Kakao에서 제안한 HiFi-GAN(2020), Univnet(2021)과 NC에서 제안한 VocGAN(2020)이 유명<br>
+<br>
+
+# 음성 합성
+- 학습된 모델을 통해 텍스트로부터 음성을 만들어내는 과정
+  ` python synthesizer.py --load_path logdir-tacotron2/100000steps --num_speakers 11 --speaker_id 8 --text "text" `<br>
+<br>
 
 # 웹 페이지 구성
 
